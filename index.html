@@ -17,26 +17,31 @@
 }
 :root[data-theme="dark"]{--bg1:#4a1f3a;--bg2:#2a1233;--card:#241a2b;--text:#d8cbe0;--strong:#f1e8f5;--accent:#ff7ab8;--paper:#2d2236}
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-tap-highlight-color:transparent}
-html,body{height:100%}
-body{background:linear-gradient(135deg,var(--bg1),var(--bg2));display:flex;justify-content:center;align-items:center;overflow:hidden;padding:20px}
-.card{background:var(--card);padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.15);text-align:center;max-width:400px;width:100%;position:relative;z-index:10}
-h1{color:var(--accent);font-size:22px;margin-bottom:15px}
-p{color:var(--text);font-size:15px;line-height:1.5;margin-bottom:25px}
-.buttons{display:flex;justify-content:center;gap:20px;height:50px}
+html{min-height:100%;background:var(--bg1)}
+body{min-height:100vh;background:linear-gradient(135deg,var(--bg1),var(--bg2));background-attachment:fixed;display:flex;padding:20px}
+.card{background:var(--card);padding:26px 22px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.15);text-align:center;max-width:420px;width:100%;margin:auto;position:relative;z-index:10}
+h1{color:var(--accent);font-size:19px;line-height:1.3;margin-bottom:14px}
+.q p{color:var(--text);font-size:14px;line-height:1.55;margin-bottom:14px;text-align:justify}
+.q .aviso{border-left:3px solid var(--accent);padding-left:10px;text-align:left;font-size:13px}
+.buttons{display:flex;justify-content:center;gap:20px;height:50px;margin-top:20px}
 button{padding:12px 25px;font-size:16px;font-weight:bold;border:none;border-radius:25px;cursor:pointer;color:#fff;touch-action:manipulation;-webkit-appearance:none;appearance:none}
 #sim{background:var(--ok);box-shadow:0 4px 10px rgba(40,167,69,.3)}
 #nao{background:var(--no);box-shadow:0 4px 10px rgba(220,53,69,.3);transition:left .15s,top .15s}
-.contract{display:none;text-align:left;background:var(--paper);border:2px dashed var(--accent);padding:20px;border-radius:10px;max-height:70vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.contract h2{text-align:center;color:var(--accent);font-size:18px;margin-bottom:10px}
-.contract p{font-size:13px;color:var(--strong);margin-bottom:10px;text-align:justify}
-.ok{text-align:center;color:var(--ok);font-weight:bold;margin-top:15px;font-size:14px}
+.contract{display:none;text-align:left;background:var(--paper);border:2px dashed var(--accent);padding:18px 16px;border-radius:10px}
+.contract h2{text-align:center;color:var(--accent);font-size:16px;margin-bottom:10px}
+.contract p{font-size:12.5px;line-height:1.5;color:var(--strong);margin-bottom:8px;text-align:justify}
+.contract .pre{font-style:italic}
+.ok{text-align:center;color:var(--ok);font-weight:bold;margin-top:12px;font-size:13px;line-height:1.5}
+.data{text-align:center;color:var(--text);font-size:12px;margin-top:8px}
 </style>
 </head>
 <body>
 <div class="card">
-  <div id="pergunta">
-    <h1>Termo de Adesão Obrigatório 📝</h1>
-    <p>Podemos prosseguir com a fidelização de <strong>45 anos</strong>? (Aviso: caso alguma das partes encerre o contrato antes do prazo, deverá pagar <strong>R$ 1.000.000,00</strong> à outra parte).</p>
+  <div id="pergunta" class="q">
+    <h1>Termo de Adesão e Compromisso de Fidelidade Recíproca 📝</h1>
+    <p>Pelo presente instrumento particular, as partes, no pleno gozo de suas faculdades mentais e emocionais, doravante denominadas simplesmente <strong>AS PARTES</strong>, reconhecem a existência de vínculo afetivo de elevada relevância e manifestam o desejo de formalizar, em caráter definitivo, a sua <strong>fidelização exclusiva</strong>, pelo prazo irrevogável de <strong>45 (quarenta e cinco) anos</strong>, renováveis automaticamente.</p>
+    <p>Diante do exposto, e estando cientes de todas as cláusulas e condições a seguir, AS PARTES concordam em prosseguir com a assinatura deste Termo?</p>
+    <p class="aviso"><strong>Aviso legal:</strong> a rescisão antecipada por qualquer das partes sujeita o infrator à multa compensatória de <strong>R$ 1.000.000,00</strong> (um milhão de reais), sem prejuízo das demais penalidades previstas neste instrumento.</p>
     <div class="buttons">
       <button id="sim" type="button">Sim ❤️</button>
       <button id="nao" type="button">Não ❌</button>
@@ -44,11 +49,15 @@ button{padding:12px 25px;font-size:16px;font-weight:bold;border:none;border-radi
   </div>
   <div class="contract" id="contrato">
     <h2>📜 CONTRATO OFICIAL DE FIDELIDADE</h2>
-    <p><strong>Cláusula 1ª:</strong> Fica formalizada a partir deste exato momento a parceria de exclusividade e muita cumplicidade.</p>
-    <p><strong>Cláusula 2ª:</strong> O prazo de vigência é de 45 anos, podendo ser renovado automaticamente por tempo indeterminado.</p>
-    <p><strong>Cláusula 3ª:</strong> Em caso de tentativa de quebra contratual por saudade excessiva, o infrator será punido com abraços obrigatórios e multas em formato de cafuné e carinho.</p>
-    <p><strong>Cláusula 4ª:</strong> Ambas as partes concordam em rir das piadas ruins e aturar os defeitos um do outro.</p>
-    <div class="ok">✅ Contrato Assinado com Sucesso!<br>Pode printar e salvar! 📸✨</div>
+    <p class="pre">Pelo presente instrumento, e na melhor forma do direito (e do coração), AS PARTES firmam o presente contrato, que se regerá pelas cláusulas a seguir, de cumprimento obrigatório e sem direito a arrependimento.</p>
+    <p><strong>Cláusula 1ª:</strong> Quem trair, em qualquer grau, forma ou intenção, incluindo traição emocional e virtual, transferirá à parte traída a totalidade do seu patrimônio presente e futuro, incluindo imóveis, veículos, contas, investimentos e heranças, sem direito a defesa ou recurso.</p>
+    <p><strong>Cláusula 2ª:</strong> Quem desejar encerrar este contrato deverá publicar, em todas as suas redes sociais com perfil aberto, um vídeo dizendo que é otário e vacilão. A publicação não poderá ser editada, apagada, arquivada ou ocultada em nenhuma hipótese.</p>
+    <p><strong>Cláusula 3ª:</strong> Em caso de adoção de pet pelo casal, a guarda ficará integralmente com a vítima da quebra contratual, sem direito a visitas, pensão ou guarda compartilhada.</p>
+    <p><strong>Cláusula 4ª:</strong> Havendo filha ou filho do casal, a separação torna-se juridicamente impossível, ficando este contrato automaticamente blindado contra qualquer pedido de rescisão.</p>
+    <p><strong>Cláusula 5ª:</strong> Durante todo o prazo do contrato, o casal deverá trocar afetos amorosos todos os dias, sem direito a negociação, exceto quando uma das partes estiver fisicamente impossibilitada ou em caso de doença extrema.</p>
+    <p><strong>Foro:</strong> Fica eleito o foro do coração, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+    <div class="ok">✅ Contrato assinado com sucesso!<br>Pode printar e salvar! 📸✨</div>
+    <div class="data" id="data"></div>
   </div>
 </div>
 <script>
@@ -69,6 +78,10 @@ document.getElementById('sim').addEventListener('click',function(){
   document.getElementById('pergunta').style.display='none';
   nao.style.display='none';
   document.getElementById('contrato').style.display='block';
+  try{
+    document.getElementById('data').textContent='Assinado eletronicamente em '+new Date().toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'});
+  }catch(err){}
+  window.scrollTo(0,0);
 });
 </script>
 </body>
