@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Termo de Fidelidade Exclusivo</title>
+<style>
+:root{
+  --bg1:#ff9a9e;--bg2:#fecfef;--card:#fff;--text:#555;--strong:#333;--accent:#d63384;
+  --paper:#fffdf9;--ok:#28a745;--no:#dc3545;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg1:#4a1f3a;--bg2:#2a1233;--card:#241a2b;--text:#d8cbe0;--strong:#f1e8f5;--accent:#ff7ab8;--paper:#2d2236}
+}
+:root[data-theme="dark"]{--bg1:#4a1f3a;--bg2:#2a1233;--card:#241a2b;--text:#d8cbe0;--strong:#f1e8f5;--accent:#ff7ab8;--paper:#2d2236}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:linear-gradient(135deg,var(--bg1),var(--bg2));display:flex;justify-content:center;align-items:center;overflow:hidden;padding:20px}
+.card{background:var(--card);padding:30px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,.15);text-align:center;max-width:400px;width:100%;position:relative;z-index:10}
+h1{color:var(--accent);font-size:22px;margin-bottom:15px}
+p{color:var(--text);font-size:15px;line-height:1.5;margin-bottom:25px}
+.buttons{display:flex;justify-content:center;gap:20px;height:50px}
+button{padding:12px 25px;font-size:16px;font-weight:bold;border:none;border-radius:25px;cursor:pointer;color:#fff;touch-action:manipulation;-webkit-appearance:none;appearance:none}
+#sim{background:var(--ok);box-shadow:0 4px 10px rgba(40,167,69,.3)}
+#nao{background:var(--no);box-shadow:0 4px 10px rgba(220,53,69,.3);transition:left .15s,top .15s}
+.contract{display:none;text-align:left;background:var(--paper);border:2px dashed var(--accent);padding:20px;border-radius:10px;max-height:70vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.contract h2{text-align:center;color:var(--accent);font-size:18px;margin-bottom:10px}
+.contract p{font-size:13px;color:var(--strong);margin-bottom:10px;text-align:justify}
+.ok{text-align:center;color:var(--ok);font-weight:bold;margin-top:15px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="pergunta">
+    <h1>Termo de Adesão Obrigatório 📝</h1>
+    <p>Podemos prosseguir com a fidelização de <strong>45 anos</strong>? (Aviso: caso alguma das partes encerre o contrato antes do prazo, deverá pagar <strong>R$ 1.000.000,00</strong> à outra parte).</p>
+    <div class="buttons">
+      <button id="sim" type="button">Sim ❤️</button>
+      <button id="nao" type="button">Não ❌</button>
+    </div>
+  </div>
+  <div class="contract" id="contrato">
+    <h2>📜 CONTRATO OFICIAL DE FIDELIDADE</h2>
+    <p><strong>Cláusula 1ª:</strong> Fica formalizada a partir deste exato momento a parceria de exclusividade e muita cumplicidade.</p>
+    <p><strong>Cláusula 2ª:</strong> O prazo de vigência é de 45 anos, podendo ser renovado automaticamente por tempo indeterminado.</p>
+    <p><strong>Cláusula 3ª:</strong> Em caso de tentativa de quebra contratual por saudade excessiva, o infrator será punido com abraços obrigatórios e multas em formato de cafuné e carinho.</p>
+    <p><strong>Cláusula 4ª:</strong> Ambas as partes concordam em rir das piadas ruins e aturar os defeitos um do outro.</p>
+    <div class="ok">✅ Contrato Assinado com Sucesso!<br>Pode printar e salvar! 📸✨</div>
+  </div>
+</div>
+<script>
+var nao=document.getElementById('nao');
+function fugir(e){
+  if(e&&e.preventDefault)e.preventDefault();
+  var w=window.innerWidth,h=window.innerHeight;
+  var bw=nao.offsetWidth,bh=nao.offsetHeight,m=16;
+  nao.style.position='fixed';
+  nao.style.zIndex='20';
+  nao.style.left=(m+Math.random()*Math.max(0,w-bw-2*m))+'px';
+  nao.style.top=(m+60+Math.random()*Math.max(0,h-bh-2*m-120))+'px';
+}
+nao.addEventListener('touchstart',fugir,{passive:false});
+nao.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')fugir(e)});
+nao.addEventListener('click',fugir);
+document.getElementById('sim').addEventListener('click',function(){
+  document.getElementById('pergunta').style.display='none';
+  nao.style.display='none';
+  document.getElementById('contrato').style.display='block';
+});
+</script>
+</body>
+</html>
